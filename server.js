@@ -7,8 +7,8 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Configuración de Supabase
-const supabaseUrl = 'https://gwbrwcbmnumuszedjlub.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd3YnJ3Y2JtbnVtdXN6ZWRqbHViIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjgzMTQ3OTMsImV4cCI6MjA0Mzg5MDc5M30.kxxIcg8FGb9vI1DsuJkacDZp9sOs4rWGFAxuz1DUwwo';
+const supabaseUrl = process.env.SUPA_URL;
+const supabaseKey = procces.env.SUPA_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Función para cargar proveedores desde la base de datos
@@ -122,8 +122,8 @@ async function sendMessage(to, message) {
   // Download the helper library from https://www.twilio.com/docs/node/install
 const twilio = require("twilio"); // Or, for ESM: import twilio from "twilio";
 
-const accountSid = "AC3298d5e668c801a7c050c47470ae87a8";
-const authToken = "ba104deedf2b735b31e002ce8c641578";
+const accountSid = process.env.TWILIOACCOUNTSID;
+const authToken = process.env.ba104deedf2b735b31e002ce8c641578;
 const client = twilio(accountSid, authToken);
 console.log("esto es to: " + to)
 const sendMessage = await client.messages.create({

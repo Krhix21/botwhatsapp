@@ -9,6 +9,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Configuración de Supabase
 const supabaseUrl = process.env.SUPA_URL;
 const supabaseKey = process.env.SUPA_KEY;
+console.log("esto es supaurl: ", supabaseUrl)
+console.log("esto es supaKey: ", supabaseKey)
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Función para cargar proveedores desde la base de datos

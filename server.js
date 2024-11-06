@@ -124,8 +124,6 @@ const twilio = require("twilio"); // Or, for ESM: import twilio from "twilio";
 
 const accountSid = process.env.TWILIOACCOUNTSID;
 const authToken = process.env.TWILIOAUTH_TOKEN;
-console.log("esto es accountSid: ", accountSid)
-console.log("esto es authToken: ", authToken)
 const client = twilio(accountSid, authToken);
 console.log("esto es to: " + to)
 const sendMessage = await client.messages.create({
